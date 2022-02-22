@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <!--驼峰原则-->
+    <settings>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+
+    <typeAliases>
+        <package name="com.lzx.Pojo"/>
+    </typeAliases>
+
+
+    <mappers>
+<!--        <mapper resource="com/lzx/dao/BooksMapper.xml"/>-->
+        <mapper class="com.lzx.Dao.UserMapper"/>
+        <mapper class="com.lzx.Dao.FileMapper"/>
+    </mappers>
+
+</configuration>

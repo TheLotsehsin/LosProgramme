@@ -1,0 +1,33 @@
+
+				1.显示文件的列表内（按照类型）文件名，上传人，下载的次数
+				2.按照下载的次数，降序排列(数据库)
+				3.对下载的文件 进行状态管理 （冻结，解冻）
+ 				4.对文件进行评论
+
+
+ SpringMVC中实现文件的上传操作
+ 			实现的步骤
+ 				1.环境的搭建和文件的下载操作一致
+ 				2.SpringMVC专门提供一个上传的机制（必须在SpringMVC.xml文件中进行声明）
+ 					<!-- MultipartResovler解析器 -->
+ 						<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+ 							<property name="maxUploadSize" value="50000"></property>
+ 							//上传文件的大小的限制
+ 						</bean>
+ 				3.创建上传的页面 --注意表单的上传数据的类型控制
+ 						enctype="multipart/form-data" 当前的表单采用2进制的方式提交数据
+
+ 				4.创建一个Upload的控制器
+
+ 				作业：
+ 					1.创建SpringMVC和Mybatis项目
+ 					2.建立数据表filetype/ fileMessage数据表（编号，空间外键，真实文件名，存放文件名（路径），上传人 外键，上传时间 ，
+ 					文件大小，下载的次数，文件的类型外键。。）
+ 					3.创建上传页面（包含数据表中的部分信息），将文件存放到指定的文件路径之下 WebRoot/files
+ 					4.将上传文件的信息 存放在数据表中
+ 					5.上传的页面中，要求下拉菜单（从数据库中获取文件类型）
+
+ 					6.创建一个个人信息表，空间表 （个人信息的注册，空间的开辟（5M大小，空间所有人的外键，空间大小）） 空间大小的管理
+
+
+ 					user<-->spaceSize--File---FileType
